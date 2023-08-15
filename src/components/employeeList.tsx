@@ -1,5 +1,12 @@
-import {  } from "react";
-
+'use client'
+import { useState, useEffect } from "react";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+  } from "@/components/ui/accordion"
+  
 
 export default function EmployeeList() {
     const [employees, setEmployees] = useState([])
@@ -30,7 +37,35 @@ export default function EmployeeList() {
 
     return (
         <div>
-            
+            <h1>Lista de Funcionários</h1>
+            <ul>
+                {employees.map(employee => (
+                    <li key={employee.id}>
+                        <Accordion type="single" collapsible>
+                        <AccordionItem value="item-1">
+                            <AccordionTrigger>{employee.name}</AccordionTrigger>
+                            <AccordionContent>
+                            <p>Infomrações pessoais:</p>
+                            {employee.birthdate}
+                            {employee.gender }
+                            {employee.marital_status }
+                            {employee.cpf }
+                            <p>Informações de contato:</p>
+                            {employee.adress }
+                            {employee.phone }
+                            {employee.email }
+                            <p>Detalhes do emprego:</p>
+                            {employee.position}
+                            {employee.departament}
+                            {employee.hire_date}
+                            {employee.salary}
+                            </AccordionContent>
+                        </AccordionItem>
+                        </Accordion>
+                        </li>
+                
+                ))}
+            </ul>
         </div>
     )
 }
