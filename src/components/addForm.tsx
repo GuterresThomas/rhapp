@@ -99,7 +99,6 @@ export default function AddForm() {
 
                 <button type="submit">Adicionar Funcionário</button>
             </form>
-
         </div>
     )
 }
