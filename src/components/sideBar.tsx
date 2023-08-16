@@ -9,7 +9,7 @@ function Sidebar() {
                 <div className="flex-col flex">
                     <div className="w-full border-b-2 border-gray-200">
                     </div>
-                    <div className="flex bg-gray-100  overflow-x-hidden h-screen">
+                    <div className="flex bg-gray-100  overflow-x-hidden  h-screen">
                         <div className="bg-sky-100 lg:flex md:w-64 md:flex-col hidden">
                             <div className="flex-col pt-5 flex overflow-y-auto">
                                 <div className="h-full flex-col justify-between px-4 flex">
