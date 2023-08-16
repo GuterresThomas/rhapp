@@ -9,13 +9,6 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion"
   
-  import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-  } from "@/components/ui/popover"
-
-  import { ScrollArea } from "@/components/ui/scroll-area"
 
   
 
