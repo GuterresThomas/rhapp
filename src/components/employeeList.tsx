@@ -66,9 +66,9 @@ export default function EmployeeList() {
     return (
         <div>
             <div>
-                <h1>Lista de Funcionários</h1>
+                <h1 className="font-bold p-2 m-2">Lista de Funcionários</h1>
             </div>    
-        <div className="flex justify-center">
+        <div className="flex justify-center bg-sky-100 rounded-xl p-2">
             <ul>
                 {employees.map(employee => (
                     <li key={employee.id}>

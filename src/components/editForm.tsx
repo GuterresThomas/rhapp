@@ -53,8 +53,8 @@ export default function EditForm() {
 
     return (
         <div>
-            <h1 className="flex justify-center">Editar funcionário</h1>
-            <div className="flex justify-center m-4 p-4">
+            <h1 className="flex justify-center font-bold p-2 m-2">Editar funcionário</h1>
+            <div className="flex justify-center m-4 p-4 bg-sky-100 rounded-xl">
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2">
                     <label htmlFor="name">Nome:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={editedEmployee.name} onChange={(e) => setEditedEmployee({ ...editedEmployee, name: e.target.value })} />
@@ -92,7 +92,7 @@ export default function EditForm() {
                     <label htmlFor="salary">Salário</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="salary" name="salary" value={editedEmployee.salary} onChange={(e) => setEditedEmployee({ ...editedEmployee, salary: e.target.value })} />
 
-                    <button type="submit">Editar Funcionário</button>
+                    <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar Funcionário</button>
                 </form>
             
             </div>

@@ -62,8 +62,11 @@ export default function AddForm() {
     }, [])
 
     return (
-        <div className="flex justify-center m-4 p-4">
-            <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2">
+        <div className="flex flex-col justify-center m-4 p-4 bg-sky-100 rounded-xl">
+            <div>
+                <span className="font-bold p-2 m-2">Adicionar Funcionário:</span>
+            </div>
+            <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
                 <label htmlFor="name">Nome:</label>
                 <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newEmployee.name} onChange={(e) => setNewEmployee({ ...newEmployee, name: e.target.value })} />
                 
@@ -100,7 +103,7 @@ export default function AddForm() {
                 <label htmlFor="salary">Salário</label>
                 <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="salary" name="salary" value={newEmployee.salary} onChange={(e) => setNewEmployee({ ...newEmployee, salary: e.target.value })} />
 
-                <button type="submit">Adicionar Funcionário</button>
+                <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Funcionário</button>
             </form>
         </div>
     )
