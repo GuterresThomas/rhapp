@@ -87,12 +87,12 @@ export default function EmployeeList() {
                                                     <div className="m-2 "><p>Estado civil:</p>{employee.marital_status }</div>
                                                     <div className="m-2 "><p>CPF:</p>{employee.cpf }</div>
                                                     <p className="font-bold">Informações de contato:</p>
-                                                    <div className="m-2 "><p>Endereço:</p>{employee.adress }</div>
+                                                    <div className="m-2 "><p>Endereço:</p>{employee.address }</div>
                                                     <div className="m-2 "><p>Telefone:</p>{employee.phone }</div>
                                                     <div className="m-2 "><p>Email:</p>{employee.email }</div>
                                                     <p className="font-bold">Detalhes do emprego:</p>
                                                     <div className="m-2 "><p>Cargo:</p>{employee.position}</div>
-                                                    <div className="m-2 "><p>Departamento:</p>{employee.departament}</div>
+                                                    <div className="m-2 "><p>Departamento:</p>{employee.department}</div>
                                                     <div className="m-2 "><p>Data de admissão:</p>{employee.hire_date}</div>
                                                     <div className="m-2 "><p>Salário:</p>{employee.salary}</div>
                                                     <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>

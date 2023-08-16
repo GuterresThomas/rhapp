@@ -85,8 +85,8 @@ export default function AddForm() {
                     <label htmlFor="cpf">CPF:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="cpf" name="cpf" value={newEmployee.cpf} onChange={(e) => setNewEmployee({ ...newEmployee, cpf: e.target.value })} />
 
-                    <label htmlFor="adress">Endereço:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="adress" name="adress" value={newEmployee.adress} onChange={(e) => setNewEmployee({ ...newEmployee, adress: e.target.value })} />
+                    <label htmlFor="address">Endereço:</label>
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="address" name="address" value={newEmployee.address} onChange={(e) => setNewEmployee({ ...newEmployee, address: e.target.value })} />
                     
                     <label htmlFor="phone">Telefone:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="phone" name="phone" value={newEmployee.phone} onChange={(e) => setNewEmployee({ ...newEmployee, phone: e.target.value })} />
