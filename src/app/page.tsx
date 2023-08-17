@@ -4,8 +4,13 @@ import Sidebar from "@/components/sideBar"
 
 export default function Home() {
   return (
-      <div>
+      <div className="flex">
         <Sidebar />
+        <div className="bg-black opacity-80">
+          <div className="h-screen">
+            <img src="/Background.png" className="h-screen"/>
+          </div>
+        </div>
       </div>
   
   )
