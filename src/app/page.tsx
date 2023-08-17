@@ -6,7 +6,7 @@ export default function Home() {
   return (
       <div className="flex">
         <Sidebar />
-        <div className="bg-black opacity-80">
+        <div className="opacity-80">
           <div className="h-screen">
             <img src="/Background.png" className="h-screen"/>
           </div>
