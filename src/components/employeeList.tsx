@@ -30,6 +30,8 @@ export default function EmployeeList() {
         hire_date: '',
         salary: '',
     })
+    const [searchTerm, setSearchTerm] = useState("")
+    const [filteredEmployees, setFilteredEmployees] = useState([])
 
     const fetchEmployees = async () => {
         const response = await fetch('http://localhost:3000/employees')
@@ -64,47 +66,60 @@ export default function EmployeeList() {
     useEffect(() => {
         fetchEmployees()
     }, [])
+    
+    useEffect(() => {
+        const filteredEmployees = employees.filter((employee) =>
+          employee.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredEmployees(filteredEmployees);
+      }, [searchTerm, employees]);
 
     return (
         <div className="h-screen">
             <div>
-                <h1 className="font-bold p-2">Lista de Funcionários</h1>
+                <h1 className="font-bold p-2">Lista de Funcionários:</h1>
             </div>    
-            <div className="flex justify-center bg-sky-100 rounded-xl p-1">
-            <ScrollArea className="overflow-x-hidden h-[480px] scroll-smooth">
-                    <ul>
-                        {employees.map(employee => (
+            <div className="flex justify-center bg-sky-100 rounded-xl p-2">
+                <ScrollArea className="overflow-x-hidden h-[480px] scroll-smooth">
+                    <input
+                            type="text"
+                            placeholder="Pesquisar funcionários..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="p-2 rounded-xl"
+                        />
+                        <ul>
+                            {filteredEmployees.map((employee) => (
                             <li key={employee.id}>
                                 <Accordion type="single" collapsible >
-                                    <AccordionItem value="item-1">
-                                        <AccordionTrigger><div>{employee.name}</div></AccordionTrigger>
-                                        <AccordionContent className="overflow-x-hidden h-[480px] scroll-smooth">
-                                            <ScrollArea className="h-[450px] ">
-                                                <div className="gap-2">
-                                                    <h3 className="font-bold">Informações pessoais:</h3>
-                                                    <div className="m-2 "><p>Data de nascimento:</p>{employee.birthdate}</div>
-                                                    <div className="m-2 "><p>Sexo:</p>{employee.gender }</div>
-                                                    <div className="m-2 "><p>Estado civil:</p>{employee.marital_status }</div>
-                                                    <div className="m-2 "><p>CPF:</p>{employee.cpf }</div>
-                                                    <p className="font-bold">Informações de contato:</p>
-                                                    <div className="m-2 "><p>Endereço:</p>{employee.address }</div>
-                                                    <div className="m-2 "><p>Telefone:</p>{employee.phone }</div>
-                                                    <div className="m-2 "><p>Email:</p>{employee.email }</div>
-                                                    <p className="font-bold">Detalhes do emprego:</p>
-                                                    <div className="m-2 "><p>Cargo:</p>{employee.position}</div>
-                                                    <div className="m-2 "><p>Departamento:</p>{employee.department}</div>
-                                                    <div className="m-2 "><p>Data de admissão:</p>{employee.hire_date}</div>
-                                                    <div className="m-2 "><p>Salário:</p>{employee.salary}</div>
-                                                    <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>
-                                                    <Link href="/editForm"><button className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar funcionário(a)</button></Link>
-                                                </div>
-                                            </ScrollArea>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion>
+                                            <AccordionItem value="item-1">
+                                                <AccordionTrigger><div>{employee.name}</div></AccordionTrigger>
+                                                <AccordionContent className="overflow-x-hidden h-[480px] scroll-smooth">
+                                                    <ScrollArea className="h-[450px] ">
+                                                        <div className="gap-2">
+                                                            <h3 className="font-bold">Informações pessoais:</h3>
+                                                            <div className="m-2 "><p>Data de nascimento:</p>{employee.birthdate}</div>
+                                                            <div className="m-2 "><p>Sexo:</p>{employee.gender }</div>
+                                                            <div className="m-2 "><p>Estado civil:</p>{employee.marital_status }</div>
+                                                            <div className="m-2 "><p>CPF:</p>{employee.cpf }</div>
+                                                            <p className="font-bold">Informações de contato:</p>
+                                                            <div className="m-2 "><p>Endereço:</p>{employee.address }</div>
+                                                            <div className="m-2 "><p>Telefone:</p>{employee.phone }</div>
+                                                            <div className="m-2 "><p>Email:</p>{employee.email }</div>
+                                                            <p className="font-bold">Detalhes do emprego:</p>
+                                                            <div className="m-2 "><p>Cargo:</p>{employee.position}</div>
+                                                            <div className="m-2 "><p>Departamento:</p>{employee.department}</div>
+                                                            <div className="m-2 "><p>Data de admissão:</p>{employee.hire_date}</div>
+                                                            <div className="m-2 "><p>Salário:</p>{employee.salary}</div>
+                                                            <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>
+                                                            <Link href="/editForm"><button className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar funcionário(a)</button></Link>
+                                                        </div>
+                                                    </ScrollArea>
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        </Accordion>
                             </li>
-                        
-                        ))}
+                            ))}
                     </ul>
                 </ScrollArea>
             </div>
