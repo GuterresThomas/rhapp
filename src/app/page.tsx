@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import signIn from "@/firebase/auth/signin";
 import { useRouter } from 'next/navigation'
 import { User } from "firebase/auth";
-import Link from "link/next"
+import Link from "next/link"
 
 function Page() {
     const [email, setEmail] = useState<string>('');
@@ -26,10 +26,10 @@ function Page() {
     }
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-20">
             <div>
-                <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Login</h1>
-                <form onSubmit={handleForm} className="p-5 rounded-md mt-2 bg-sky-100">
+                <form onSubmit={handleForm} className="p-5 mt-2 bg-sky-100 rounded-xl">
+                    <h1 className="font-sans-Roboto font-semibold text-lg ">Login</h1>
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
                         <p className="bg-sky-100">Email</p>
                         <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-zinc-50 p-2" />
