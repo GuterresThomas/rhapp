@@ -26,24 +26,19 @@ function Page() {
     }
 
     return (
-        <div className="flex justify-center">
-            <div className="">
-                <h1 className="mt-20 font-sans-Roboto font-semibold text-lg ">Cadastro</h1>
-                <form onSubmit={handleForm} className="p-5 rounded-md mt-2 bg-zinc-100">
-                    <label className="font-sans-Roboto font-semibold m-2 bg-zinc-100" htmlFor="email">
-                        <p className="bg-zinc-100">Email</p>
-                        <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-zinc-50 p-2" />
-                    </label>
-                    <label htmlFor="confirmEmail"  className="font-sans-Roboto font-semibold m-2 bg-zinc-100">
-                         <p className="bg-zinc-100">Confirm Email</p> 
-                         <input onChange={(e) => setConfirmEmail(e.target.value)} required type="email" name="confirmEmail" id="confirmEmail" placeholder="example@mail.com" className="bg-zinc-50 p-2" /> 
-                    </label> 
-                    <label htmlFor="password" className="font-sans-Roboto bg-zinc-100 mt-2 font-semibold">
-                        <p className="bg-zinc-100">Password</p>
-                        <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="bg-zinc-50 p-2"/>
-                    </label>
-                    <br></br>
-                    <button type="submit" className="bg-zinc-400 rounded-md ml-14 p-2 mt-2 font-sans-Roboto font-bold hover:bg-zinc-500">Sign up</button>
+        <div className="flex justify-center mt-20">
+            <div>
+                <form onSubmit={handleForm} className="p-5 bg-sky-100 rounded-xl gap-2 flex flex-col justify-center">
+                    <label className="font-sans-Roboto font-semibold bg-sky-100" htmlFor="email"><p className="bg-sky-100">Email</p></label>
+                        <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="rounded-xl w-full hover:bg-sky-100 bg-sky-50 p-2" />
+                    
+                    <label htmlFor="confirmEmail"  className="font-sans-Roboto font-semibold bg-sky-100"><p className="bg-sky-100">Confirm Email</p></label>
+                         <input onChange={(e) => setConfirmEmail(e.target.value)} required type="email" name="confirmEmail" id="confirmEmail" placeholder="example@mail.com" className="hover:bg-sky-100 rounded-xl w-full bg-sky-50 p-2" /> 
+                     
+                    <label htmlFor="password" className="font-sans-Roboto bg-sky-100 mt-2 font-semibold"><p className="bg-sky-100">Password</p></label>
+                        <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="hover:bg-sky-100 rounded-xl w-full bg-sky-50 p-2"/>
+                    <br/>
+                    <button type="submit" className="bg-sky-50 rounded-xl mt-2 w-full font-sans-Roboto font-bold p-2 hover:bg-sky-100">Cadastar</button>
                 </form>
             </div>
         </div>

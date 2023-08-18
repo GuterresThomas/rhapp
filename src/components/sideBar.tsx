@@ -1,3 +1,5 @@
+'use client'
+import ButtonLogOut from "@/components/buttonLogOut"
 import Link from "next/link"
 function Sidebar() {
     return (
@@ -15,7 +17,7 @@ function Sidebar() {
                                 <div className="h-full flex-col justify-between px-4 flex">
                                     <div className="space-y-4">
                                         <div className="bg-top bg-cover space-y-1">
-                                            <Link href="/" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 flex
+                                            <Link href="/userPage" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 flex
                                                     transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
                                                 <span className="justify-center items-center flex">
                                                     <span className="justify-center items-center flex">
@@ -113,7 +115,7 @@ function Sidebar() {
                                                         </span>
                                                     </span>
                                                 </span>
-                                                <span>Logout</span>
+                                                <ButtonLogOut />
                                             </Link>
                                         </div>
                                     </div>

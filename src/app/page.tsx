@@ -28,22 +28,21 @@ function Page() {
     return (
         <div className="flex justify-center mt-20">
             <div>
-                <form onSubmit={handleForm} className="p-5 mt-2 bg-sky-100 rounded-xl">
-                    <h1 className="font-sans-Roboto font-semibold text-lg ">Login</h1>
+                <form onSubmit={handleForm} className="p-5 mt-2 bg-sky-100 rounded-xl gap-1 flex flex-col justify-center">
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
                         <p className="bg-sky-100">Email</p>
-                        <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-zinc-50 p-2" />
+                        <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-sky-50 hover:bg-sky-100 rounded-xl w-full p-2" />
                     </label>
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="password">
                         <p className="bg-sky-100">Password</p>
-                        <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="bg-zinc-50 p-2" />
+                        <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" className="bg-sky-50 hover:bg-sky-100 rounded-xl w-full p-2" />
                     </label>
                     <br />
-                    <button type="submit" className="bg-zinc-400 rounded-md ml-14 p-2 mt-2 font-sans-Roboto font-bold hover:bg-zinc-500">Login</button>
+                    <button type="submit" className="bg-sky-50 rounded-xl font-sans-Roboto font-bold p-1 hover:bg-sky-200">Login</button>
+                    <div>
+                      <Link href="/registerPage"><span className="text-sm font-semibold">Não tem uma conta ainda? Cadastre-se aqui!</span></Link>
+                    </div>
                 </form>
-                <div>
-                  <Link href="/registerPage"><span className="font-semibold">Não tem uma conta ainda? Cadastre-se aqui!</span></Link>
-                </div>
             </div>
         </div>
     );

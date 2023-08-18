@@ -1,19 +1,22 @@
-import Image from 'next/image'
+'use client'
 import Link from "next/link"
 import Sidebar from "@/components/sideBar"
 import UserRouteProtection from "@/components/userRouteProtection"
+import AdminRouteProtection from "@/components/adminRouteProtection"
 
-export default function Home() {
+export default function Page() {
   return (
-    <UserRouteProtection>
-        <div className="flex">
-            <Sidebar />
-            <div className="opacity-80">
-            <div className="h-screen">
-                <img src="/Background.png" className="h-screen"/>
-            </div>
-            </div>
-        </div>
-    </UserRouteProtection>
+      <div>
+        <UserRouteProtection>
+            <div className="flex">
+                <Sidebar />
+                <div className="opacity-80">
+                  <div className="h-screen">
+                      <img src="/Background.png" className="h-screen"/>
+                  </div>
+                </div>
+            </div> 
+        </UserRouteProtection>
+      </div>
   )
 }
