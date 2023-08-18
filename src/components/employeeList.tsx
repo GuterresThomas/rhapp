@@ -112,7 +112,7 @@ export default function EmployeeList() {
                                                             <div className="m-2 "><p className="font-semibold">Data de admissão:</p>{employee.hire_date}</div>
                                                             <div className="m-2 "><p className="font-semibold">Salário:</p>{employee.salary}</div>
                                                             <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>
-                                                            <Link href="/editForm"><button className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar funcionário(a)</button></Link>
+                                                            <Link href={`/editForm?id=${employee.id}`}><button className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar funcionário(a)</button></Link>
                                                         </div>
                                                     </ScrollArea>
                                                 </AccordionContent>

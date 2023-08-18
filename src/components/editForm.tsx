@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 
 export default function EditForm() {
+    
     const [employees, setEmployees] = useState([])
     const [editedEmployee, setEditedEmployee] = useState({
         name: '',
@@ -23,8 +24,13 @@ export default function EditForm() {
     const fetchEmployees = async () => {
         const response = await fetch('http://localhost:3000/employees')
         const data = await response.json()
-        setEmployees(data)
+        setEmployees(data);
+        if (data.length > 0) {
+            setEditedEmployee(data[0]);
+        }
     }
+
+    
 
     
     const handleSubmit = (event) => {
@@ -34,7 +40,7 @@ export default function EditForm() {
         window.location.reload()
     }
 
-    const editEmployee = async () => {
+    const editEmployee = async (id) => {
         const response = await fetch(`http://localhost:3000/employees/${editedEmployee.id}`, {
             method: 'PUT',
             headers: {
@@ -46,6 +52,8 @@ export default function EditForm() {
             fetchEmployees()
         }
     }
+
+    
     
     
     
