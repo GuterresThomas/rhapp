@@ -7,16 +7,14 @@ import AdminRouteProtection from "@/components/adminRouteProtection"
 export default function Page() {
   return (
       <div>
-        <UserRouteProtection>
-            <div className="flex">
-                <Sidebar />
-                <div className="opacity-80">
-                  <div className="h-screen">
-                      <img src="/Background.png" className="h-screen"/>
-                  </div>
+          <div className="flex">
+              <Sidebar />
+              <div className="opacity-80">
+                <div className="h-screen">
+                    <img src="/Background.png" className="h-screen"/>
                 </div>
-            </div> 
-        </UserRouteProtection>
+              </div>
+          </div> 
       </div>
   )
 }
