@@ -36,8 +36,8 @@ export default function EditForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         editEmployee();
-        alert('Funcionário editado')
-        window.location.reload()
+        alert('Funcionário editado com sucesso!')
+        window.location.href = "/empList"
     }
 
     const editEmployee = async (id) => {
