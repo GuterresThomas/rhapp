@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
 
+
 export default function AverageSalaryCalc() {
     const [employees, setEmployees] = useState([]);
     const [averageSalary, setAverageSalary] = useState(0);
@@ -25,6 +26,7 @@ export default function AverageSalaryCalc() {
         <div>
             <p>Média de salário: {averageSalary.toFixed(2)}</p>
         </div>
+        
     );
     
 }
