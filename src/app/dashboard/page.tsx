@@ -7,11 +7,11 @@ import MainDashBoard from "@/components/maindashboard"
 export default function Page() {
     
     return (
-        <div className="flex gap-10">
+        <div className="flex justify-center gap-10">
             <div>
                 <Sidebar />
             </div>
-            <div className="justify-center flex-col flex">
+            <div className="justify-center flex">
                 <MainDashBoard />
             </div>
         </div>
