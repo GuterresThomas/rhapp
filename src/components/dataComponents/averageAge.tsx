@@ -33,7 +33,6 @@ function AverageAgeCalc() {
 
     return (
         <div>
-            <h2>Dashboard de Estatísticas</h2>
             <p>Média de idade dos funcionários: {averageAge.toFixed(2)} anos</p>
             {/* Render other statistic components here */}
         </div>

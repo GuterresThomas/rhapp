@@ -26,11 +26,16 @@ const GenderDistributionChart = ({ employees }) => {
             },
           ],
         },
+        
       });
     }
+    
   }, [employees]);
+  
+  
+  
 
-  return <canvas ref={chartRef} />;
+  return <canvas ref={chartRef} />; 
 };
 
 export default GenderDistributionChart;

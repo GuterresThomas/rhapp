@@ -6,7 +6,7 @@ import AdminRouteProtection from "@/components/adminRouteProtection"
 
 export default function Page() {
   return (
-      <AdminRouteProtection>
+      
         <div>
             <div className="flex">
                 <Sidebar />
@@ -17,6 +17,6 @@ export default function Page() {
                 </div>
             </div> 
         </div>
-        </AdminRouteProtection>
+        
   )
 }

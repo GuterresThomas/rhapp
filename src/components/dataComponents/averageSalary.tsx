@@ -23,10 +23,8 @@ export default function AverageSalaryCalc() {
     
     
     return (
-        <div>
-            <p>Média de salário: {averageSalary.toFixed(2)}</p>
-        </div>
-        
+            <p>Média de salário: {averageSalary.toFixed(2)}</p>    
     );
     
 }
+
