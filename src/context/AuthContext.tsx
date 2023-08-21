@@ -6,8 +6,6 @@ import {
     User,
 } from 'firebase/auth';
 import firebase_app from '@/firebase/config';
-import { Interface } from 'readline';
-
 const auth = getAuth(firebase_app);
 
 interface CustomUser extends User {
@@ -33,6 +31,7 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ childr
 
     React.useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+            console.log('Auth state changed:', authUser);
             if (authUser) {
                 // Create a new CustomUser object with the necessary properties
                 const customUser: CustomUser = {
@@ -40,7 +39,7 @@ export const AuthContextProvider: React.FC<AuthContextProviderProps> = ({ childr
                     isAdmin: authUser.email === 'admin@admin.com',
                     isUser: authUser.email !== 'admin@admin.com' && authUser.email !== null,
                 };
-
+                console.log('Custom user:', customUser); 
                 setUser(customUser);
             } else {
                 setUser(null);

@@ -1,8 +1,8 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from "react";
 import { useAuthContext } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { useEffect }  from 'react'
+
 
 
 interface UserRouteProtectionProps {
@@ -14,10 +14,11 @@ const UserRouteProtection: React.FC<UserRouteProtectionProps> = ({ children }) =
   const router = useRouter();
 
   React.useEffect(() => {
+    console.log('User in route protection:', user);
     if (!user || !user.isUser ) {
       // Redirecionar usuário não autenticado ou não administrador para a página inicial
       alert('não autorizado!')
-      router.push('/');
+
     }
   }, [user]);
 
