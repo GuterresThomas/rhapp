@@ -11,7 +11,7 @@ export default function Page() {
             <div>
                 <Sidebar />
             </div>
-            <div className="justify-center flex">
+            <div className="justify-center bg-sky-100 m-2 flex">
                 <MainDashBoard />
             </div>
         </div>
