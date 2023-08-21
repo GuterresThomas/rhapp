@@ -49,20 +49,6 @@ export default function EmployeeList() {
         }
     }
 
-    const editEmployee = async () => {
-        const response = await fetch(`http://localhost:3000/employees/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updatedEmployeeData),
-        });
-        if (response.status === 200) {
-            fetchEmployees()
-            alert('Funcionário editado com sucesso!');
-        }
-    }
-
     useEffect(() => {
         fetchEmployees()
     }, [])
@@ -75,7 +61,8 @@ export default function EmployeeList() {
       }, [searchTerm, employees]);
 
     return (
-        <div className="h-screen">
+        <div className="h-screen
+        ">
             <div>
                 <h1 className="font-bold p-2">Lista de Funcionários:</h1>
             </div>    
@@ -111,8 +98,7 @@ export default function EmployeeList() {
                                                             <div className="m-2 "><p className="font-semibold">Departamento:</p>{employee.department}</div>
                                                             <div className="m-2 "><p className="font-semibold">Data de admissão:</p>{employee.hire_date}</div>
                                                             <div className="m-2 "><p className="font-semibold">Salário:</p>{employee.salary}</div>
-                                                            <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>
-                                                            <Link href={`/editForm?id=${employee.id}`}><button className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar funcionário(a)</button></Link>
+                                                            <button onClick={() => deleteEmployee(employee.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir funcionário(a)</button>                                                            
                                                         </div>
                                                     </ScrollArea>
                                                 </AccordionContent>

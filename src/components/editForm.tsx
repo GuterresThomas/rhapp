@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 export default function EditForm() {
     
     const [employees, setEmployees] = useState([])
+    const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
     const [editedEmployee, setEditedEmployee] = useState({
         name: '',
         birthdate: '',
@@ -26,7 +27,7 @@ export default function EditForm() {
         const data = await response.json()
         setEmployees(data);
         if (data.length > 0) {
-            setEditedEmployee(data[0]);
+            setSelectedEmployeeId(data[0].id); // You can set the default selected employee ID here
         }
     }
 
@@ -41,7 +42,7 @@ export default function EditForm() {
     }
 
     const editEmployee = async (id) => {
-        const response = await fetch(`http://localhost:3000/employees/${editedEmployee.id}`, {
+        const response = await fetch(`http://localhost:3000/employees/${selectedEmployeeId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
