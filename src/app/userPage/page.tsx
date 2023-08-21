@@ -13,10 +13,7 @@ export default function Page() {
   const router = useRouter();
 
   useEffect(() => {
-      if (user === null) {
-          return router.push('/');
-      };
-  }, [user, router]);
+  }, [user]);
 
 
   return (
