@@ -22,8 +22,16 @@ export default function BulletinBoard() {
             },
             body: JSON.stringify(newBulletin),
         })
+        if(response.status === 201) {
+            setNewBulletin({
+                title: '',
+                body: '',
+            })
+            fetchBulletins()
+        }
 
         
+
     }
 }
 
