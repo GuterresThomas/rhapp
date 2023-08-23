@@ -16,7 +16,10 @@ const UserRouteProtection: React.FC<UserRouteProtectionProps> = ({ children }) =
   React.useEffect(() => {
     console.log('User in route protection:', user);
   
-  }, [user]);
+  }, [user])
+  if (user != null) {
+    alert('aaaa')
+  };
 
   return <>{children}</>;
 };
