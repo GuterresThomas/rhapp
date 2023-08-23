@@ -29,9 +29,28 @@ export default function BulletinBoard() {
             })
             fetchBulletins()
         }
-
-        
-
     }
+
+    const deleteBulletin =async (id) => {
+        const response = await fetch(`http://localhost:3000/employees/${id}`, {
+            method: 'DELETE'
+        });
+        if(response.status === 204 ){
+            fetchBulletins()
+            alert('Aviso excluido com sucesso!')
+        }
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        addBulletin()
+        alert('Avido adicionado com sucesso!')
+        window.location.reload()
+    }
+
+    useEffect(() => {
+        fetchBulletins()
+    }, [])
+    
 }
 
