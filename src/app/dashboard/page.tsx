@@ -1,6 +1,3 @@
-import AverageAgeCalc from "@/components/dataComponents/averageAge"
-import AverageSalaryCalc from "@/components/dataComponents/averageSalary"
-import GenderDistTrue from "@/components/dataComponents/genderDistTrue"
 import Sidebar from "@/components/sideBar"
 import MainDashBoard from "@/components/maindashboard"
 
