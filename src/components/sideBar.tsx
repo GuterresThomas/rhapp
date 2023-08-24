@@ -127,7 +127,6 @@ function Sidebar() {
                                                         </span>
                                                     </span>
                                                 </span>
-                                                <span>Settings</span>
                                             </Link>
                                             <Link href="#" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 flex
                     transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
