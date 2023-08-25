@@ -11,7 +11,7 @@ export default function AddClientForm() {
         cpf:'',
     })
 
-    const fetchCustmores = async () => {
+    const fetchCustomers = async () => {
         const response = await fetch('http://localhost:3000/customers')
         const data = await response.json()
         setCustomers(data)
@@ -31,7 +31,7 @@ export default function AddClientForm() {
                 contact_info:'',
                 cpf:'',
             })
-            fetchCustmores()
+            fetchCustomers()
         }     
     }
     const handleSubmit = (event) => {
@@ -42,7 +42,7 @@ export default function AddClientForm() {
     }   
     
     useEffect(() => {
-        fetchCustmores()
+        fetchCustomers()
     }, [])
 
     return (
