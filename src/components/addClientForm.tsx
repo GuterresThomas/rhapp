@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 
-export default function AddForm() {
+export default function AddClientForm() {
     const [customers, setCustomers] = useState([])
     const [newCustomer, setNewCustomer] = useState({
         name: '',
