@@ -15,6 +15,7 @@ export default function AddClientForm() {
         const response = await fetch('http://localhost:3000/customers')
         const data = await response.json()
         setCustomers(data)
+        console.log(data)
     }
 
     const addCustomer =async () => {
