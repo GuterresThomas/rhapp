@@ -10,6 +10,7 @@ export default function AddProductForm() {
         description: '',
         price: 0,
         stock_quantity: 0,
+        product_category_id: 1,
     })
 
     const fetchProducts = async () => {
@@ -76,8 +77,6 @@ export default function AddProductForm() {
                     <label htmlFor="stock_quantity">Quantidade: </label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={newProduct.stock_quantity} onChange={(e) => setNewProduct({ ...newProduct, stock_quantity: e.target.value })} />
                     
-                    <label htmlFor="product_category_id">Categoria: </label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="product_category_id" name="product_category_id" value={newProduct.product_category_id} onChange={(e) => setNewProduct({ ...newProduct, product_category_id: e.target.value })} />
                     
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Produto</button>
                 </form>
