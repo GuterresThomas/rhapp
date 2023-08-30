@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link"
-import EditForm from "@/components/editForm"
+import EditProductForm from "@/components/editProductForm"
 import {
     Accordion,
     AccordionContent,
@@ -18,6 +18,7 @@ export default function ProductList() {
     const [products, setProducts] = useState([])
     const [searchTerm, setSearchTerm] = useState("")
     const [filteredProducts, setFilteredProducts] = useState([])
+    const [selectedProduct, setSelectedProduct] = useState(null)
 
     const fetchProducts = async () => {
         const response = await fetch('http://localhost:3000/products')
@@ -25,6 +26,13 @@ export default function ProductList() {
         setProducts(data)
         console.log(data)
     }
+
+    const handleEditButtonClick = (product) => {
+        setSelectedProduct(product); // Define o produto selecionado para edição
+      };
+      const handleFormClose = () => {
+        setSelectedProduct(null); // Reset selectedProduct to close the form
+      };
 
     const deleteProduct = async (id) => {
         const response = await fetch(`http://localhost:3000/products/${id}`, {
@@ -66,24 +74,36 @@ export default function ProductList() {
                             {filteredProducts.map((product) => (
                             <li key={product.id}>
                                 <Accordion type="single" collapsible >
-                                            <AccordionItem value="item-1">
-                                                <AccordionTrigger><div>{product.name}</div></AccordionTrigger>
-                                                <AccordionContent className="overflow-x-hidden h-[480px] scroll-smooth">
-                                                    <ScrollArea className="h-[450px] ">
-                                                        <div className="gap-2">
-                                                            <h3 className="font-bold">Informações do produto:</h3>
-                                                            <div className="m-2 "><p className="font-semibold">Descrição do produto:</p>{product.description}</div>
-                                                            <div className="m-2 "><p className="font-semibold">Preço:</p>{product.price }$</div>
-                                                            <div className="m-2 "><p className="font-semibold">Quantidade no estoque:</p>{product.stock_quantity}</div>
-                                                            <button onClick={() => deleteProduct(product.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir Produto</button>                                                            
-                                                        </div>
-                                                    </ScrollArea>
-                                                </AccordionContent>
-                                            </AccordionItem>
-                                        </Accordion>
+                                    <AccordionItem value="item-1">
+                                        <AccordionTrigger><div>{product.name}</div></AccordionTrigger>
+                                        <AccordionContent className="overflow-x-hidden h-[480px] scroll-smooth">
+                                            <ScrollArea className="h-[450px] ">
+                                                <div className="gap-2">
+                                                    <h3 className="font-bold">Informações do produto:</h3>
+                                                    <div className="m-2 "><p className="font-semibold">Descrição do produto:</p>{product.description}</div>
+                                                    <div className="m-2 "><p className="font-semibold">Preço:</p>{product.price }$</div>
+                                                    <div className="m-2 "><p className="font-semibold">Quantidade no estoque:</p>{product.stock_quantity}</div>
+                                                    <button onClick={() => handleEditButtonClick(product)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar Produto</button>                                                            
+                                                    <button onClick={() => deleteProduct(product.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir Produto</button>                                                            
+                                                </div>
+                                            </ScrollArea>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
                             </li>
                             ))}
-                    </ul>
+                        </ul>
+                        <div>
+                            {selectedProduct && (
+                                <EditProductForm
+                                    product={selectedProduct} // Pass an empty object if selectedEmployee is null
+                                    onUpdate={() => {
+                                    fetchProducts();
+                                    setSelectedProduct(null);
+                                    }}
+                                />
+                            )}
+                        </div>
                 </ScrollArea>
             </div>
         </div>
