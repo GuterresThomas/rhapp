@@ -27,6 +27,7 @@ function EditForm({ employee, onUpdate }) {
 
       if (response.ok) {
         onUpdate(editedEmployee);
+        alert('Funcionário editado com sucesso!')
       } else {
         // Handle error response
       }
