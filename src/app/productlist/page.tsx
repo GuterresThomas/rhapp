@@ -1,4 +1,4 @@
-import ProductList from "@/components/productList"
+import ProductList from "@/components/products/productList"
 import Sidebar from "@/components/sideBar"
 
 

@@ -1,4 +1,4 @@
-import AddForm from "@/components/addForm"
+import AddForm from "@/components/employee/addForm"
 import Sidebar from "@/components/sideBar"
 
 

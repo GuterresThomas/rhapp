@@ -1,4 +1,4 @@
-import AddClientForm from "@/components/addClientForm"
+import AddClientForm from "@/components/customer/addClientForm"
 import Sidebar from "@/components/sideBar"
 
 

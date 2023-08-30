@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import Link from "next/link"
-import EditCustomerForm from "@/components/editCustomerForm"
+import EditCustomerForm from "@/components/customer/editCustomerForm"
 import {
     Accordion,
     AccordionContent,

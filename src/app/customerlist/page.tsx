@@ -1,4 +1,4 @@
-import CustomerList from "@/components/customerList"
+import CustomerList from "@/components/customer/customerList"
 import Sidebar from "@/components/sideBar"
 
 export default function CustomerListPage() {

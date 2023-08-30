@@ -1,4 +1,4 @@
-import EmployeeList from "@/components/employeeList"
+import EmployeeList from "@/components/employee/employeeList"
 import Sidebar from "@/components/sideBar"
 
 export default function EmployeeListPage() {
