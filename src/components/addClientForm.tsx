@@ -54,13 +54,13 @@ export default function AddClientForm() {
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
                     <label htmlFor="name">Nome:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newCustomer.name} onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newCustomer.name} onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })} required />
                     
                     <label htmlFor="contact_info">Dados de contato:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="contact_info" name="contact_info" value={newCustomer.contact_info} onChange={(e) => setNewCustomer({ ...newCustomer, contact_info: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="contact_info" name="contact_info" value={newCustomer.contact_info} onChange={(e) => setNewCustomer({ ...newCustomer, contact_info: e.target.value })} required />
                     
                     <label htmlFor="cpf">CPF:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="cpf" name="cpf" value={newCustomer.cpf} onChange={(e) => setNewCustomer({ ...newCustomer, cpf: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="cpf" name="cpf" value={newCustomer.cpf} onChange={(e) => setNewCustomer({ ...newCustomer, cpf: e.target.value })} required />
                     
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Cliente</button>
                 </form>

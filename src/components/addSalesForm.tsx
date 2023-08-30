@@ -61,13 +61,13 @@ export default function AddSaleForm() {
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
                     <label htmlFor="date">Data:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="date" name="date" value={newSale.date} onChange={(e) => setNewSale({ ...newSale, date: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="date" name="date" value={newSale.date} onChange={(e) => setNewSale({ ...newSale, date: e.target.value })} required />
                     
                     <label htmlFor="total">Total:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="total" name="total" value={newSale.total} onChange={(e) => setNewSale({ ...newSale, total: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="total" name="total" value={newSale.total} onChange={(e) => setNewSale({ ...newSale, total: e.target.value })} required />
                     
                     <label htmlFor="customer_id">ID do Cliente:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="customer_id" name="customer_id" value={newSale.customer_id} onChange={(e) => setNewSale({ ...newSale, customer_id: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="customer_id" name="customer_id" value={newSale.customer_id} onChange={(e) => setNewSale({ ...newSale, customer_id: e.target.value })} required />
                     
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Venda</button>
                 </form>

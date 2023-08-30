@@ -66,16 +66,16 @@ export default function AddProductForm() {
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
                     <label htmlFor="name">Nome:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} required />
                     
                     <label htmlFor="description">Descrição:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="description" name="description" value={newProduct.description} onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="description" name="description" value={newProduct.description} onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })} required />
                     
                     <label htmlFor="price">Preço:</label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="price" name="price" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="price" name="price" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} required />
                     
                     <label htmlFor="stock_quantity">Quantidade: </label>
-                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={newProduct.stock_quantity} onChange={(e) => setNewProduct({ ...newProduct, stock_quantity: e.target.value })} />
+                    <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={newProduct.stock_quantity} onChange={(e) => setNewProduct({ ...newProduct, stock_quantity: e.target.value })} required />
                     
                     
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Produto</button>
