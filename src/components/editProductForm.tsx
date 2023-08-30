@@ -45,16 +45,16 @@ function EditProductForm({ product, onUpdate }) {
             </div>
             <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
                 <label htmlFor="name">Nome:</label>
-                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={editedProduct.name} onChange={handleInputChange} />
+                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={editedProduct.name} onChange={handleInputChange} required />
                 
                 <label htmlFor="description">Descrição:</label>
-                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="description" name="description" value={editedProduct.description} onChange={handleInputChange} />
+                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="description" name="description" value={editedProduct.description} onChange={handleInputChange} required />
                 
                 <label htmlFor="price">Preço:</label>
-                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="price" name="price" value={editedProduct.price} onChange={handleInputChange} />
+                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="price" name="price" value={editedProduct.price} onChange={handleInputChange} required />
                 
                 <label htmlFor="stock_quantity">Quantidade: </label>
-                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={editedProduct.stock_quantity} onChange={handleInputChange} />
+                <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={editedProduct.stock_quantity} onChange={handleInputChange} required />
                 
                 
                 <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Produto</button>
