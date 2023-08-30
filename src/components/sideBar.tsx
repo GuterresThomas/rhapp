@@ -1,6 +1,13 @@
 'use client'
 import ButtonLogOut from "@/components/buttonLogOut"
 import Link from "next/link"
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+  } from "@/components/ui/accordion"
+  
 function Sidebar() {
     return (
         <div>
@@ -33,142 +40,178 @@ function Sidebar() {
                                                 </span>
                                                 <span>Página inicial</span>
                                             </Link>
-                                            <Link href="/addform" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Adicionar funcionário</span>
-                                            </Link>        
-                                            <Link href="/empList" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Lista de funcionários</span>
-                                            </Link>
-                                            <Link href="/addproduct" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Adicionar Produtos</span>
-                                            </Link>
-                                            <Link href="/productlist" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Lista de produtos</span>
-                                            </Link>
-                                            <Link href="/addcustomer" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Adicionar cliente</span>
-                                            </Link>
-                                            <Link href="/customerlist" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Lista de clientes</span>
-                                            </Link>
-                                            <Link href="/dashboard" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Painel</span>
-                                            </Link>
-                                            <Link href="/bulletin" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
-                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
-                                                <span className="justify-center items-center flex">
-                                                    <span className="justify-center items-center flex">
-                                                        <span className="justify-center items-center flex">
-                                                            <span className="items-center justify-center flex">
-                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
-                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
-                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
-                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
-                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                                <span>Quadro de avisos</span>
-                                            </Link>   
+                                            <div>
+                                                <Accordion type="single" collapsible>
+                                                    <AccordionItem value="item-1">
+                                                        <AccordionTrigger>Funcionários</AccordionTrigger>
+                                                        <AccordionContent>
+                                                            <Link href="/addform" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Adicionar funcionário</span>
+                                                                </Link>        
+                                                                <Link href="/empList" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Lista de funcionários</span>
+                                                                </Link>
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                                </Accordion>
+                                            </div> 
+                                            <div>
+                                                <Accordion type="single" collapsible>
+                                                    <AccordionItem value="item-1">
+                                                        <AccordionTrigger>Produtos</AccordionTrigger>
+                                                        <AccordionContent>
+                                                            <Link href="/addproduct" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Adicionar Produtos</span>
+                                                                </Link>
+                                                                <Link href="/productlist" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Lista de produtos</span>
+                                                                </Link>
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                                </Accordion>
+                                            </div>
+                                            <div>
+                                                <Accordion type="single" collapsible>
+                                                    <AccordionItem value="item-1">
+                                                        <AccordionTrigger>Clientes</AccordionTrigger>
+                                                        <AccordionContent>
+                                                            <Link href="/addcustomer" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Adicionar cliente</span>
+                                                                </Link>
+                                                                <Link href="/customerlist" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="justify-center items-center flex">
+                                                                                <span className="items-center justify-center flex">
+                                                                                    <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                        xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                        14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                        17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                        x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                                </span>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>Lista de clientes</span>
+                                                                </Link>
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                              </Accordion>
+                                            </div>
+                                            <div>
+                                            <Accordion type="single" collapsible>
+                                                <AccordionItem value="item-1">
+                                                    <AccordionTrigger>Dashboard</AccordionTrigger>
+                                                    <AccordionContent>
+                                                        <Link href="/dashboard" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                <span className="justify-center items-center flex">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="items-center justify-center flex">
+                                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                </span>
+                                                                <span>Painel</span>
+                                                        </Link>
+                                                        <Link href="/bulletin" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                            transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
+                                                                <span className="justify-center items-center flex">
+                                                                    <span className="justify-center items-center flex">
+                                                                        <span className="justify-center items-center flex">
+                                                                            <span className="items-center justify-center flex">
+                                                                                <svg className="mr-4" width="24" height="24" viewbox="0 0 24 24" fill="none"
+                                                                                    xmlns="http://www.w3.org/2000/svg" /><path d="M17 9L13.9558 13.5662C13.5299 14.2051 12.5728
+                                                                                    14.1455 12.2294 13.4587L11.7706 12.5413C11.4272 11.8545 10.4701 11.7949 10.0442 12.4338L7
+                                                                                    17" stroke="#4F4F4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><svg
+                                                                                    x="3" y="3" width="18" height="18" rx="2" stroke="#4F4F4F" stroke-width="2"></svg>
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                </span>
+                                                                <span>Quadro de avisos</span>
+                                                        </Link> 
+                                                    </AccordionContent>
+                                                </AccordionItem>
+                                                </Accordion>
+                                            </div>         
                                         </div>
                                     </div>
                                     
