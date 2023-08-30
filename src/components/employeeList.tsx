@@ -32,6 +32,7 @@ export default function EmployeeList() {
     })
     const [searchTerm, setSearchTerm] = useState("")
     const [filteredEmployees, setFilteredEmployees] = useState([])
+    
 
     const fetchEmployees = async () => {
         const response = await fetch('http://localhost:3000/employees')
