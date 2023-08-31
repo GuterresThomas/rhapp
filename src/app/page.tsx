@@ -4,11 +4,13 @@ import signIn from "@/firebase/auth/signin";
 import { useRouter } from 'next/navigation'
 import { User } from "firebase/auth";
 import Link from "next/link"
+import { useAuthContext } from '@/context/AuthContext'
 
 function Page() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const router = useRouter();
+    const { user } = useAuthContext();
 
     const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -16,14 +18,18 @@ function Page() {
         const { result, error } = await signIn(email, password);
 
         if (error) {
-            alert(error)
+            alert(error);
             return router.push("/");
+            console.log(error)
         }
-            console.log(result)
-            return router.push("/userPage");
-    
 
+        // Assuming the user is inserted into the context automatically by the signIn function
+        else {
+            console.log('User is authenticated:', user);
+            return router.push("/userPage");
+        }
     }
+
 
     return (
         <div className="flex justify-center mt-20">

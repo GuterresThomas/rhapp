@@ -12,6 +12,7 @@ export default function AddProductForm() {
         stock_quantity: 0,
         product_category_id: 1,
     })
+    
 
     const fetchProducts = async () => {
         const response = await fetch('http://localhost:3000/products')
