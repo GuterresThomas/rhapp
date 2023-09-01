@@ -60,22 +60,22 @@ export default function AddProductForm() {
     }, [])
 
     return (
-        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen">
+        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px]">
             <ScrollArea>
-                <div>
+                <div className="text-center">
                     <span className="font-bold p-2 m-2">Adicionar Produto:</span>
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
-                    <label htmlFor="name">Nome:</label>
+                    <label className="font-semibold" htmlFor="name">Nome:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newProduct.name} onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} required />
                     
-                    <label htmlFor="description">Descrição:</label>
+                    <label className="font-semibold" htmlFor="description">Descrição:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="description" name="description" value={newProduct.description} onChange={(e) => setNewProduct({ ...newProduct, description: e.target.value })} required />
                     
-                    <label htmlFor="price">Preço:</label>
+                    <label className="font-semibold" htmlFor="price">Preço:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="price" name="price" value={newProduct.price} onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} required />
                     
-                    <label htmlFor="stock_quantity">Quantidade: </label>
+                    <label className="font-semibold" htmlFor="stock_quantity">Quantidade: </label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={newProduct.stock_quantity} onChange={(e) => setNewProduct({ ...newProduct, stock_quantity: e.target.value })} required />
                     
                     

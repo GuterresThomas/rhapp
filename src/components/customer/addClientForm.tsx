@@ -47,19 +47,19 @@ export default function AddClientForm() {
     }, [])
 
     return (
-        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen">
+        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px]">
             <ScrollArea>
-                <div>
+                <div className="text-center">
                     <span className="font-bold p-2 m-2">Adicionar cliente:</span>
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
-                    <label htmlFor="name">Nome:</label>
+                    <label className="font-semibold" htmlFor="name">Nome:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newCustomer.name} onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })} required />
                     
-                    <label htmlFor="contact_info">Dados de contato:</label>
+                    <label className="font-semibold" htmlFor="contact_info">Dados de contato:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="contact_info" name="contact_info" value={newCustomer.contact_info} onChange={(e) => setNewCustomer({ ...newCustomer, contact_info: e.target.value })} required />
                     
-                    <label htmlFor="cpf">CPF:</label>
+                    <label className="font-semibold" htmlFor="cpf">CPF:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="cpf" name="cpf" value={newCustomer.cpf} onChange={(e) => setNewCustomer({ ...newCustomer, cpf: e.target.value })} required />
                     
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Cliente</button>
