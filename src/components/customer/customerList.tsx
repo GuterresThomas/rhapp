@@ -58,7 +58,7 @@ export default function CustomerList() {
         <div className="h-screen
         ">
             <div>
-                <h1 className="font-bold p-2">Lista de CLientes:</h1>
+                <h1 className="font-bold p-2">Lista de Clientes:</h1>
             </div>    
             <div className="flex justify-center bg-sky-100 rounded-xl p-2">
                 <ScrollArea className="overflow-x-hidden h-[480px] scroll-smooth">
