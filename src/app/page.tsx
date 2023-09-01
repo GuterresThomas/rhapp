@@ -32,9 +32,9 @@ function Page() {
 
 
     return (
-        <div className="flex justify-center mt-20">
-            <div>
-                <form onSubmit={handleForm} className="p-5 mt-2 bg-sky-100 rounded-xl gap-1 flex flex-col justify-center">
+        <div className="flex justify-center mt-20 ">
+            <div className="">
+                <form onSubmit={handleForm} className="p-5 shadow-slate-700 shadow-md mt-2 bg-sky-100 rounded-xl gap-1 flex flex-col justify-center">
                     <label className="font-sans-Roboto font-semibold m-2" htmlFor="email">
                         <p className="bg-sky-100">Email</p>
                         <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" className="bg-sky-50 hover:bg-sky-100 rounded-xl w-full p-2" />

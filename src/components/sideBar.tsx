@@ -10,7 +10,7 @@ import {
   
 function Sidebar() {
     return (
-        <div>
+        <div className=" shadow-black shadow-xl">
             <div className="pt-0 pr-0 pb-0 pl-0 mt-0 mr-0 mb-0 ml-0">
 
             </div>
