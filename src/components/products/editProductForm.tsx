@@ -57,7 +57,7 @@ function EditProductForm({ product, onUpdate }) {
                 <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="number" id="stock_quantity" name="stock_quantity" value={editedProduct.stock_quantity} onChange={handleInputChange} required />
                 
                 
-                <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Produto</button>
+                <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Editar Produto</button>
             </form>
         </ScrollArea>
     </div>   

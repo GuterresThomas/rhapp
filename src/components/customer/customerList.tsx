@@ -55,8 +55,7 @@ export default function CustomerList() {
       }, [searchTerm, customers]);
 
     return (
-        <div className="h-screen
-        ">
+        <div className="h-screen">
             <div>
                 <h1 className="font-bold p-2">Lista de Clientes:</h1>
             </div>    
