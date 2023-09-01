@@ -55,18 +55,18 @@ export default function CustomerList() {
       }, [searchTerm, customers]);
 
     return (
-        <div className="h-screen">
-            <div>
-                <h1 className="font-bold p-2">Lista de Clientes:</h1>
-            </div>    
-            <div className="flex justify-center bg-sky-100 rounded-xl p-2">
-                <ScrollArea className="overflow-x-hidden h-[480px] scroll-smooth">
+        <div className="h-screen"> 
+            <div className=" bg-sky-100 rounded-xl p-2">
+                <div className="text-center">
+                    <h1 className="font-bold p-2">Lista de Clientes:</h1>
+                </div>   
+                <ScrollArea className="overflow-x-hidden h-[480px] w-[780px] scroll-smooth">
                     <input
                             type="text"
                             placeholder="Pesquisar clientes..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="p-2 rounded-xl"
+                            className="p-2 rounded-xl w-full"
                         />
                         <ul>
                             {filteredCustomers.map((customer) => (
@@ -74,8 +74,8 @@ export default function CustomerList() {
                                 <Accordion type="single" collapsible >
                                     <AccordionItem value="item-1">
                                         <AccordionTrigger><div>{customer.name}</div></AccordionTrigger>
-                                        <AccordionContent className="overflow-x-hidden h-[480px] scroll-smooth">
-                                            <ScrollArea className="h-[450px] ">
+                                        <AccordionContent className="overflow-x-hidden h-[250px] scroll-smooth">
+                                            <ScrollArea className="h-[240px] ">
                                                 <div className="gap-2">
                                                     <h3 className="font-bold">Informações do cliente:</h3>
                                                     <div className="m-2 "><p className="font-semibold">Dados de contato:</p>{customer.contact_info }</div>

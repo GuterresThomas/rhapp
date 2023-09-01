@@ -64,46 +64,46 @@ export default function AddForm() {
     }, [])
 
     return (
-        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen">
+        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px]">
             <ScrollArea>
-                <div>
+                <div className="text-center">
                     <span className="font-bold p-2 m-2">Adicionar Funcionário:</span>
                 </div>
                 <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">
-                    <label htmlFor="name">Nome:</label>
+                    <label className="font-semibold" htmlFor="name">Nome:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="name" name="name" value={newEmployee.name} onChange={(e) => setNewEmployee({ ...newEmployee, name: e.target.value })} />
                     
-                    <label htmlFor="birthdate">Data de Nascimento:</label>
+                    <label className="font-semibold" htmlFor="birthdate">Data de Nascimento:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="birthdate" name="birthdate" value={newEmployee.birthdate} onChange={(e) => setNewEmployee({ ...newEmployee, birthdate: e.target.value })} />
                     
-                    <label htmlFor="gender">Genêro:</label>
+                    <label className="font-semibold" htmlFor="gender">Genêro:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="gender" name="gender" value={newEmployee.gender} onChange={(e) => setNewEmployee({ ...newEmployee, gender: e.target.value })} />
                     
-                    <label htmlFor="marital_status">Estado civil:</label>
+                    <label className="font-semibold" htmlFor="marital_status">Estado civil:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="marital_status" name="marital_status" value={newEmployee.marital_status} onChange={(e) => setNewEmployee({ ...newEmployee, marital_status: e.target.value })} />
 
-                    <label htmlFor="cpf">CPF:</label>
+                    <label className="font-semibold" htmlFor="cpf">CPF:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="cpf" name="cpf" value={newEmployee.cpf} onChange={(e) => setNewEmployee({ ...newEmployee, cpf: e.target.value })} />
 
-                    <label htmlFor="address">Endereço:</label>
+                    <label className="font-semibold" htmlFor="address">Endereço:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="address" name="address" value={newEmployee.address} onChange={(e) => setNewEmployee({ ...newEmployee, address: e.target.value })} />
                     
-                    <label htmlFor="phone">Telefone:</label>
+                    <label className="font-semibold" htmlFor="phone">Telefone:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="phone" name="phone" value={newEmployee.phone} onChange={(e) => setNewEmployee({ ...newEmployee, phone: e.target.value })} required />
                     
-                    <label htmlFor="email">Email:</label>
+                    <label className="font-semibold" htmlFor="email">Email:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="email" name="email" value={newEmployee.email} onChange={(e) => setNewEmployee({ ...newEmployee, email: e.target.value })} required />
     
-                    <label htmlFor="position">Cargo:</label>
+                    <label className="font-semibold" htmlFor="position">Cargo:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="position" name="position" value={newEmployee.position} onChange={(e) => setNewEmployee({ ...newEmployee, position: e.target.value })} required />
     
-                    <label htmlFor="department">Departamento:</label>
+                    <label className="font-semibold" htmlFor="department">Departamento:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="department" name="department" value={newEmployee.department} onChange={(e) => setNewEmployee({ ...newEmployee, department: e.target.value })} required />
     
-                    <label htmlFor="hire_date">Data de contratação:</label>
+                    <label className="font-semibold" htmlFor="hire_date">Data de contratação:</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="hire_date" name="hire_date" value={newEmployee.hire_date} onChange={(e) => setNewEmployee({ ...newEmployee, hire_date: e.target.value })} required />
     
-                    <label htmlFor="salary">Salário</label>
+                    <label className="font-semibold" htmlFor="salary">Salário</label>
                     <input className="bg-sky-50 rounded-xl p-1 w-full hover:bg-sky-200" type="text" id="salary" name="salary" value={newEmployee.salary} onChange={(e) => setNewEmployee({ ...newEmployee, salary: e.target.value })} required/>
 
                     <button type="submit" className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Adicionar Funcionário</button>

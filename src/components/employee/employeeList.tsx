@@ -71,18 +71,18 @@ export default function EmployeeList() {
       }, [searchTerm, employees]);
 
     return (
-        <div className="h-screen">
-            <div>
-                <h1 className="font-bold p-2">Lista de Funcionários:</h1>
-            </div>    
-            <div className="flex justify-center bg-sky-100 rounded-xl p-2">
-                <ScrollArea className="overflow-x-hidden h-[480px] scroll-smooth">
+        <div className="h-screen"> 
+            <div className="flex justify-center flex-col bg-sky-100 rounded-xl p-2">
+                <div className="text-center">
+                    <h1 className="font-bold p-2">Lista de Funcionários:</h1>
+                </div>   
+                <ScrollArea className="overflow-x-hidden h-[480px] w-[780px] scroll-smooth">
                     <input
                             type="text"
                             placeholder="Pesquisar funcionários..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="p-2 rounded-xl"
+                            className="p-2 rounded-xl w-full"
                         />
                         <ul>
                             {filteredEmployees.map((employee) => (
