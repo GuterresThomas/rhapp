@@ -38,7 +38,7 @@ function Sidebar() {
                                                         </span>
                                                     </span>
                                                 </span>
-                                                <span>Página inicial</span>
+                                                <span className="text-lg">Página inicial</span>
                                             </Link>
                                             <div>
                                                 <Accordion type="single" collapsible>
