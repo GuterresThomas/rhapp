@@ -47,7 +47,7 @@ export default function AddClientForm() {
     }, [])
 
     return (
-        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px]">
+        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px] shadow-black shadow-md">
             <ScrollArea>
                 <div className="text-center">
                     <span className="font-bold p-2 m-2">Adicionar cliente:</span>

@@ -19,7 +19,7 @@ import GenderDistTrue from "@/components/dataComponents/genderDistTrue"
 export default function MainDashboard() {
   return (
     <>
-      <div className="hidden flex-col md:flex">
+      <div className="hidden flex-col md:flex shadow-black shadow-md">
         <div className="border-b">
           <div className="flex  items-center px-4">
             <div className="ml-auto flex items-center space-x-4">
@@ -31,14 +31,14 @@ export default function MainDashboard() {
             <h2 className="text-3xl font-bold tracking-tight">Painel</h2>
           </div>
           <Tabs defaultValue="overview" className="space-y-4">
-            <TabsList>
-              <TabsTrigger value="overview">Funcionários</TabsTrigger>
+            <TabsList className="shadow-black shadow-sm hover:bg-sky-200 rounded-xl">
+              <TabsTrigger value="overview" className="font-semibold text-lg ">Funcionários</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+                <Card className="shadow-black shadow-md rounded-xl">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
+                    <CardTitle className="text-sm font-semibold">
                       Salários:
                     </CardTitle>
                     <svg
@@ -62,9 +62,9 @@ export default function MainDashboard() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="shadow-black shadow-md rounded-xl">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-sm font-medium">
+                    <CardTitle className="text-sm font-semibold">
                       Idade:
                     </CardTitle>
                     <svg
@@ -88,7 +88,7 @@ export default function MainDashboard() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="">
+                <Card className="shadow-black shadow-md rounded-xl">
                   <CardHeader>
                     <CardTitle>Distribuição de Genêro entre os funcionários:</CardTitle>
                   </CardHeader>

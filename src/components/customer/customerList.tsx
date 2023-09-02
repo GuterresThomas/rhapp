@@ -56,7 +56,7 @@ export default function CustomerList() {
 
     return (
         <div className="h-screen"> 
-            <div className=" bg-sky-100 rounded-xl p-2">
+            <div className=" bg-sky-100 rounded-xl p-2 shadow-black shadow-md">
                 <div className="text-center">
                     <h1 className="font-bold p-2">Lista de Clientes:</h1>
                 </div>   
