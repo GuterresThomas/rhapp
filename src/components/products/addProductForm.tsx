@@ -60,8 +60,8 @@ export default function AddProductForm() {
     }, [])
 
     return (
-        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen w-[780px]">
-            <ScrollArea>
+        <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl shadow-black shadow-md h-screen w-[780px]">
+            <ScrollArea className="">
                 <div className="text-center">
                     <span className="font-bold p-2 m-2">Adicionar Produto:</span>
                 </div>
