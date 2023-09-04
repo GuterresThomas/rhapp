@@ -106,7 +106,7 @@ export default function CashRegister() {
       };
     
       return (
-        <div className="bg-sky-100 rounded-xl shadow-black shadow-md p-4 m-2">
+        <div className="bg-sky-100 rounded-xl shadow-black shadow-md w-[780px] p-4 m-2">
           <div className="font-bold text-center text-xl">
             <h2>Caixa</h2>
           </div>
@@ -114,7 +114,7 @@ export default function CashRegister() {
             <div className="font-semibold m-1 text-center text-lg">
                 <h3>Selecionar Produtos</h3>
             </div>
-                <ScrollArea className="h-[150px]">        
+                <ScrollArea className="h-[120px]">        
                     <ul className="space-y-2 space-x-2">
                         {availableProducts.map((product) => (
                         <li key={product.id}>
@@ -142,8 +142,11 @@ export default function CashRegister() {
             </ul>
           </div>
           <div>
-            <h3>Selecionar Cliente</h3>
+            <div className="font-semibold text-center m-2">
+                <h3>Selecionar Cliente</h3>
+            </div>
             <select
+                className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
                 onChange={(e) => setSelectedCustomer(Number(e.target.value))}
                 value={selectedCustomer || ''}
             >
@@ -156,16 +159,20 @@ export default function CashRegister() {
             </select>
           </div>
           <div>
-            <h3>Selecionar Método de Pagamento</h3>
-            <select onChange={(e) => setPaymentMethod(e.target.value)} value={paymentMethod}>
+            <div className="font-semibold text-center m-2">
+                <h3>Selecionar Método de Pagamento</h3>
+            </div>
+            <select 
+                className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
+                onChange={(e) => setPaymentMethod(e.target.value)} value={paymentMethod}>
               <option value="cash">Dinheiro</option>
               <option value="credit">Cartão de Crédito</option>
               <option value="debit">Cartão de Débito</option>
             </select>
           </div>
           <div>
-            <h3>Total: R${totalAmount.toFixed(2)}</h3>
-            <button onClick={handleCheckout}>Finalizar Compra</button>
+            <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
+            <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
           </div>
         </div>
       );
