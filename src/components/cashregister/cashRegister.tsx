@@ -99,14 +99,16 @@ export default function CashRegister() {
       };
     
       return (
-        <div>
-          <h2>Caixa</h2>
+        <div className="bg-sky-100 rounded-xl shadow-black shadow-md p-4 m-2">
+          <div className="font-bold text-center text-xl">
+            <h2>Caixa</h2>
+          </div>
           <div>
             <h3>Selecionar Produtos</h3>
             <ul>
                 {availableProducts.map((product) => (
                 <li key={product.id}>
-                    {product.name} - R${typeof product.price === 'number' ? product.price.toFixed(2) : 'Preço indisponível'}
+                    {product.name} - R${typeof product.price === 'number' ? product.price.toFixed(2) : ''}
                     <button onClick={() => handleProductSelect(product.id)}>Adicionar</button>
                 </li>
               ))}
