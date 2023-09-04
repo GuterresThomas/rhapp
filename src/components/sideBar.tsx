@@ -105,7 +105,7 @@ function Sidebar() {
                                                                     </span>
                                                                     <span>Registrar venda</span>
                                                                 </Link>        
-                                                                <Link href="/empList" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
+                                                                <Link href="/saleslist" className="font-medium text-sm items-center rounded-xl text-gray-900 px-4 py-2.5 block
                                                                 transition-all duration-200 hover:bg-sky-200 group cursor-pointer">
                                                                     <span className="justify-center items-center flex">
                                                                         <span className="justify-center items-center flex">
@@ -120,7 +120,7 @@ function Sidebar() {
                                                                             </span>
                                                                         </span>
                                                                     </span>
-                                                                    <span>Lista de funcionários</span>
+                                                                    <span>Lista de Vendas</span>
                                                                 </Link>
                                                         </AccordionContent>
                                                     </AccordionItem>

@@ -95,7 +95,7 @@ export default function CashRegister() {
       };
     
       // Função para processar o pagamento
-      const handleCheckout = () => {
+      const handleCheckout = async () => {
         if (totalAmount <= 0 ) {
             alert('Erro: Total negativo. Verifique os produtos selecionados.');
             return; 
@@ -103,7 +103,34 @@ export default function CashRegister() {
         if (selectedCustomer === null || selectedCustomer <= 0) {
             alert('Erro: Selecione um cliente antes de concluir a venda.');
             return;
+        }
+        const saleData = {
+          date: new Date(), // Defina a data correta da venda
+          total: totalAmount,
+          customer_id: selectedCustomer,
+        };
+      
+        try {
+          const response = await fetch('http://localhost:3000/sales', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ sale: saleData }),
+          });
+      
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data.message); // Venda registrada com sucesso
+          } else {
+            const errorData = await response.json();
+            console.log(errorData.error); // Falha ao registrar a venda
           }
+        } catch (error) {
+          console.error('Erro ao registrar a venda:', error);
+          alert('Erro ao registrar a venda. Verifique sua conexão com o servidor.');
+        }
+        
         // Implemente a lógica para processar o pagamento, enviar os detalhes para a API, etc.
         console.log('Pagamento processado:', {
           selectedProducts,
