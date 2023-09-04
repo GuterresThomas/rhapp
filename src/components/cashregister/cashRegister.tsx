@@ -116,73 +116,75 @@ export default function CashRegister() {
     
       return (
         <div className="bg-sky-100 rounded-xl shadow-black shadow-md w-[780px] p-4 m-2">
-          <div className="font-bold text-center text-xl">
-            <h2>Caixa</h2>
-          </div>
-          <div>
-            <div className="font-semibold m-1 text-center text-lg">
-                <h3>Selecionar Produtos</h3>
+          <ScrollArea className="h-[480px]">      
+            <div className="font-bold text-center text-xl">
+                <h2>Caixa</h2>
             </div>
-                <ScrollArea className="h-[120px]">        
-                    <ul className="space-y-2 space-x-2">
-                        {availableProducts.map((product) => (
-                        <li key={product.id}>
-                            <span className="font-semibold">{product.name}</span>
-                            <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleProductSelect(product.id)}>Adicionar</button>
-                        </li>
+            <div>
+                <div className="font-semibold m-1 text-center text-lg">
+                    <h3>Selecionar Produtos</h3>
+                </div>
+                    <ScrollArea className="h-[120px]">        
+                        <ul className="space-y-2 space-x-2">
+                            {availableProducts.map((product) => (
+                            <li key={product.id}>
+                                <span className="font-semibold">{product.name}</span>
+                                <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleProductSelect(product.id)}>Adicionar</button>
+                            </li>
+                        ))}
+                        </ul>
+                    </ScrollArea>
+            </div>
+            <div>
+                <div className="font-semibold text-center m-2">
+                    <h3>Produtos Selecionados:</h3>
+                </div>
+                <ul className="p-2">
+                {selectedProducts.map((item) => {
+                    const product = availableProducts.find((p) => p.id === item.productId);
+                    return (
+                    <li key={item.productId}>
+                        <span className="font-semibold">{product?.name} - Quantidade:</span> {item.quantity} - Subtotal: R${(product?.price * item.quantity || 0).toFixed(2)}
+                        <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleRemoveProduct(item.productId)}>Remover</button>
+                    </li>
+                    );
+                })}
+                </ul>
+            </div>
+            <div>
+                <div className="font-semibold text-center m-2">
+                    <h3>Selecionar Cliente</h3>
+                </div>
+                <select
+                    className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
+                    onChange={(e) => setSelectedCustomer(Number(e.target.value))}
+                    value={selectedCustomer || ''}
+                >
+                    <option value="">Selecione um cliente</option>
+                    {customers.map((customer) => (
+                    <option key={customer.id} value={customer.id}>
+                        {customer.name}
+                    </option>
                     ))}
-                    </ul>
-                </ScrollArea>
-          </div>
-          <div>
-            <div className="font-semibold text-center m-2">
-                <h3>Produtos Selecionados:</h3>
+                </select>
             </div>
-            <ul className="p-2">
-              {selectedProducts.map((item) => {
-                const product = availableProducts.find((p) => p.id === item.productId);
-                return (
-                  <li key={item.productId}>
-                    <span className="font-semibold">{product?.name} - Quantidade:</span> {item.quantity} - Subtotal: R${(product?.price * item.quantity || 0).toFixed(2)}
-                    <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleRemoveProduct(item.productId)}>Remover</button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div>
-            <div className="font-semibold text-center m-2">
-                <h3>Selecionar Cliente</h3>
+            <div>
+                <div className="font-semibold text-center m-2">
+                    <h3>Selecionar Método de Pagamento</h3>
+                </div>
+                <select 
+                    className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
+                    onChange={(e) => setPaymentMethod(e.target.value)} value={paymentMethod}>
+                <option value="cash">Dinheiro</option>
+                <option value="credit">Cartão de Crédito</option>
+                <option value="debit">Cartão de Débito</option>
+                </select>
             </div>
-            <select
-                className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
-                onChange={(e) => setSelectedCustomer(Number(e.target.value))}
-                value={selectedCustomer || ''}
-            >
-                <option value="">Selecione um cliente</option>
-                {customers.map((customer) => (
-                <option key={customer.id} value={customer.id}>
-                    {customer.name}
-                </option>
-                ))}
-            </select>
-          </div>
-          <div>
-            <div className="font-semibold text-center m-2">
-                <h3>Selecionar Método de Pagamento</h3>
+            <div>
+                <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
+                <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
             </div>
-            <select 
-                className="w-full rounded-xl lowercase bg-sky-50 hover:bg-sky-200 p-1 m-1"
-                onChange={(e) => setPaymentMethod(e.target.value)} value={paymentMethod}>
-              <option value="cash">Dinheiro</option>
-              <option value="credit">Cartão de Crédito</option>
-              <option value="debit">Cartão de Débito</option>
-            </select>
-          </div>
-          <div>
-            <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
-            <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
-          </div>
+        </ScrollArea>
         </div>
       );
 }
