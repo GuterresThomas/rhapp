@@ -96,6 +96,14 @@ export default function CashRegister() {
     
       // Função para processar o pagamento
       const handleCheckout = () => {
+        if (totalAmount <= 0 ) {
+            alert('Erro: Total negativo. Verifique os produtos selecionados.');
+            return; 
+        }
+        if (selectedCustomer === null || selectedCustomer <= 0) {
+            alert('Erro: Selecione um cliente antes de concluir a venda.');
+            return;
+          }
         // Implemente a lógica para processar o pagamento, enviar os detalhes para a API, etc.
         console.log('Pagamento processado:', {
           selectedProducts,
@@ -103,6 +111,7 @@ export default function CashRegister() {
           paymentMethod,
           totalAmount,
         });
+        alert('Venda bem sucedida!')
       };
     
       return (
