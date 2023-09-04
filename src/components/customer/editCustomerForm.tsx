@@ -40,7 +40,7 @@ function EditCustomerForm({ customer, onUpdate }) {
   return (
     <div className="flex flex-col justify-center  p-4 bg-sky-100 rounded-xl h-screen">
         <ScrollArea>
-            <div>
+            <div className="text-center">
                 <span className="font-bold p-2 m-2">Editar Cliente:</span>
             </div>
             <form onSubmit={handleSubmit} className="flex-col flex justify-center gap-2 p-2 ">

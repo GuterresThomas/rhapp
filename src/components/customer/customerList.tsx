@@ -74,7 +74,7 @@ export default function CustomerList() {
                                 <Accordion type="single" collapsible >
                                     <AccordionItem value="item-1">
                                         <AccordionTrigger><div>{customer.name}</div></AccordionTrigger>
-                                        <AccordionContent className="overflow-x-hidden h-[250px] scroll-smooth">
+                                        <AccordionContent className="overflow-x-hidden h-[180px] scroll-smooth">
                                             <ScrollArea className="h-[240px] ">
                                                 <div className="gap-2">
                                                     <h3 className="font-bold">Informações do cliente:</h3>
