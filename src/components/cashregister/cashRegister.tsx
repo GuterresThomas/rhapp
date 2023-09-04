@@ -1,5 +1,12 @@
 'use client'
 import { useState, useEffect } from "react";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+  } from "@/components/ui/accordion"
+  import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface Product {
     id: number;
@@ -104,25 +111,31 @@ export default function CashRegister() {
             <h2>Caixa</h2>
           </div>
           <div>
-            <h3>Selecionar Produtos</h3>
-            <ul>
-                {availableProducts.map((product) => (
-                <li key={product.id}>
-                    {product.name} - R${typeof product.price === 'number' ? product.price.toFixed(2) : ''}
-                    <button onClick={() => handleProductSelect(product.id)}>Adicionar</button>
-                </li>
-              ))}
-            </ul>
+            <div className="font-semibold m-1 text-center text-lg">
+                <h3>Selecionar Produtos</h3>
+            </div>
+                <ScrollArea className="h-[150px]">        
+                    <ul className="space-y-2 space-x-2">
+                        {availableProducts.map((product) => (
+                        <li key={product.id}>
+                            <span className="font-semibold">{product.name}</span>
+                            <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleProductSelect(product.id)}>Adicionar</button>
+                        </li>
+                    ))}
+                    </ul>
+                </ScrollArea>
           </div>
           <div>
-            <h3>Produtos Selecionados</h3>
-            <ul>
+            <div className="font-semibold text-center m-2">
+                <h3>Produtos Selecionados:</h3>
+            </div>
+            <ul className="p-2">
               {selectedProducts.map((item) => {
                 const product = availableProducts.find((p) => p.id === item.productId);
                 return (
                   <li key={item.productId}>
-                    {product?.name} - Quantidade: {item.quantity} - Subtotal: R${(product?.price * item.quantity || 0).toFixed(2)}
-                    <button onClick={() => handleRemoveProduct(item.productId)}>Remover</button>
+                    <span className="font-semibold">{product?.name} - Quantidade:</span> {item.quantity} - Subtotal: R${(product?.price * item.quantity || 0).toFixed(2)}
+                    <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleRemoveProduct(item.productId)}>Remover</button>
                   </li>
                 );
               })}
