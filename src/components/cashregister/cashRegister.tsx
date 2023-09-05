@@ -19,6 +19,12 @@ interface Product {
     id: number;
     name: string;
   }
+
+  interface SaleProduct {
+    name: string;
+    quantity: number;
+    price: number;
+  }
   
 export default function CashRegister() {
     const [availableProducts, setAvailableProducts] = useState<Product[]>([]);
@@ -109,6 +115,7 @@ export default function CashRegister() {
           date: new Date(), // Defina a data correta da venda
           total: totalAmount,
           customer_id: selectedCustomer,
+          payment_method: paymentMethod,
         };
       
         try {
@@ -212,7 +219,6 @@ export default function CashRegister() {
                 <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
                 <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
             </div>
-            <SalesList paymentMethod={paymentMethod} />
         </ScrollArea>
         </div>
       );

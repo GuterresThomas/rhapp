@@ -11,9 +11,12 @@ import {
   import { ScrollArea } from "@/components/ui/scroll-area"
 
 
+  interface SalesListProps {
+    paymentMethod: string;
+  }
 
 
-export default function SalesList({ paymentMethod }) {
+export default function SalesList() {
     const [sales, setSales] = useState([]);
 
     const fetchSales = async () => {
@@ -65,7 +68,7 @@ export default function SalesList({ paymentMethod }) {
                                                     <div className="m-2 "><p className="font-semibold">Data:</p>{sale.date}</div>
                                                     <div>
                                                         <p className="font-semibold">Método de Pagamento:</p>
-                                                        <p>{paymentMethod}</p>
+                                                        <p>{sale.payment_method}</p>
                                                     </div>
                                                     <button onClick={() => deleteSale(sale.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir Venda</button>
                                                 </div>
