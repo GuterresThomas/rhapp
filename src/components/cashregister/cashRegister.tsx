@@ -7,6 +7,7 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion"
   import { ScrollArea } from "@/components/ui/scroll-area"
+  import SalesList from "@/components/cashregister/salesList"
 
 interface Product {
     id: number;
@@ -211,6 +212,7 @@ export default function CashRegister() {
                 <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
                 <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
             </div>
+            <SalesList paymentMethod={paymentMethod} />
         </ScrollArea>
         </div>
       );
