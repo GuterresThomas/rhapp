@@ -21,10 +21,10 @@ interface Product {
   }
 
   interface SaleProduct {
-    name: string;
-    quantity: number;
-    price: number;
-  }
+  name: string;
+  quantity: number;
+  price: number;
+}
   
 export default function CashRegister() {
     const [availableProducts, setAvailableProducts] = useState<Product[]>([]);
