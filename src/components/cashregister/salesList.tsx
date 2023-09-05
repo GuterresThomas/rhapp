@@ -96,14 +96,13 @@ export default function SalesList() {
                                                     </div>
                                                     <div>
                                                         <p className="font-semibold">Produtos Vendidos:</p>
-                                                        <ul>
                                                         {saleItems[sale.id]?.map((item) => (
-                                                            <li key={item.product_name}>
-                                                            {item.product_name} - Quantidade:{" "}
-                                                            {item.quantity} - Subtotal: {item.subtotal} R$
-                                                            </li>
+                                                            <div key={item.id}>
+                                                                <p>{item.product_name}</p>
+                                                                <p>Quantidade: {item.quantity}</p>
+                                                                <p>Subtotal: {item.subtotal} R$</p>
+                                                            </div>
                                                         ))}
-                                                        </ul>
                                                     </div>
                                                     <button onClick={() => deleteSale(sale.id)} className="bg-sky-50 p-3 font-bold rounded-xl hover:bg-sky-200 m-2">Excluir Venda</button>
                                                 </div>

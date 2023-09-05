@@ -33,6 +33,7 @@ export default function CashRegister() {
     const [paymentMethod, setPaymentMethod] = useState<string>('dinheiro');
     const [totalAmount, setTotalAmount] = useState<number>(0)
     const [customers, setCustomers] = useState<Customer[]>([]);
+    const [saleProducts, setSaleProducts] = useState<SaleProduct[]>([]);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -80,25 +81,35 @@ export default function CashRegister() {
     
       // Função para adicionar um produto à lista de produtos selecionados
       const handleProductSelect = (productId: number) => {
-        const existingItem = selectedProducts.find((item) => item.productId === productId);
+        const existingItem = saleProducts.find((item) => item.id === productId);
+      
         if (existingItem) {
           // Se o produto já está na lista, aumente a quantidade
-          const updatedItems = selectedProducts.map((item) =>
-            item.productId === productId
+          const updatedItems = saleProducts.map((item) =>
+            item.id === productId
               ? { ...item, quantity: item.quantity + 1 }
               : item
           );
-          setSelectedProducts(updatedItems);
+          setSaleProducts(updatedItems);
         } else {
           // Se o produto não está na lista, adicione-o com quantidade 1
-          setSelectedProducts([...selectedProducts, { productId, quantity: 1 }]);
+          const product = availableProducts.find((p) => p.id === productId);
+          if (product) {
+            const newItem: SaleProduct = {
+              id: productId,
+              name: product.name,
+              quantity: 1,
+              price: product.price,
+            };
+            setSaleProducts([...saleProducts, newItem]);
+          }
         }
       };
     
       // Função para remover um produto da lista de produtos selecionados
       const handleRemoveProduct = (productId: number) => {
-        const updatedItems = selectedProducts.filter((item) => item.productId !== productId);
-        setSelectedProducts(updatedItems);
+        const updatedItems = saleProducts.filter((item) => item.id !== productId);
+        setSaleProducts(updatedItems);
       };
     
       // Função para processar o pagamento
@@ -112,10 +123,11 @@ export default function CashRegister() {
             return;
         }
         const saleData = {
-          date: new Date(), // Defina a data correta da venda
+          date: new Date(),
           total: totalAmount,
           customer_id: selectedCustomer,
           payment_method: paymentMethod,
+          sale_product: saleProducts, // Inclua a lista de produtos vendidos aqui
         };
       
         try {
@@ -174,16 +186,13 @@ export default function CashRegister() {
                 <div className="font-semibold text-center m-2">
                     <h3>Produtos Selecionados:</h3>
                 </div>
-                <ul className="p-2">
-                {selectedProducts.map((item) => {
-                    const product = availableProducts.find((p) => p.id === item.productId);
-                    return (
-                    <li key={item.productId}>
-                        <span className="font-semibold">{product?.name} - Quantidade:</span> {item.quantity} - Subtotal: R${(product?.price * item.quantity || 0).toFixed(2)}
-                        <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleRemoveProduct(item.productId)}>Remover</button>
+                  <ul className="p-2">
+                  {saleProducts.map((item) => (
+                    <li key={item.id}>
+                      <span className="font-semibold">{item.name} - Quantidade:</span> {item.quantity} - Subtotal: R${(item.price * item.quantity).toFixed(2)}
+                      <button className="ml-2 bg-sky-200 p-1 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={() => handleRemoveProduct(item.id)}>Remover</button>
                     </li>
-                    );
-                })}
+                  ))}
                 </ul>
             </div>
             <div>
