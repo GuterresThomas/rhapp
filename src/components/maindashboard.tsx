@@ -15,6 +15,7 @@ import {
 import AverageAgeCalc from "@/components/dataComponents/averageAge"
 import AverageSalaryCalc from "@/components/dataComponents/averageSalary"
 import GenderDistTrue from "@/components/dataComponents/genderDistTrue"
+import TotalSales from "@/components/dataComponents/totalSales"
 
 export default function MainDashboard() {
   return (
@@ -151,7 +152,7 @@ export default function MainDashboard() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-md font-semibold">
-                      <AverageAgeCalc />
+                      <TotalSales />
                     </p>
                   </CardContent>
                 </Card>
