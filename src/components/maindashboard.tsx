@@ -22,7 +22,7 @@ import RecentSales from "@/components/dataComponents/recentSales"
 export default function MainDashboard() {
   return (
     <>
-      <div className="hidden flex-col md:flex h-[550px] shadow-black shadow-md">
+      <div className="hidden flex-col md:flex h-[590px] shadow-black shadow-md">
         <div className="border-b">
           <div className="flex  items-center px-4">
             <div className="ml-auto flex items-center space-x-4">
@@ -94,7 +94,7 @@ export default function MainDashboard() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="shadow-black h-[400px] shadow-md rounded-xl">
+                <Card className="shadow-black h-[430px] shadow-md rounded-xl">
                   <CardHeader>
                     <CardTitle>Distribuição de Genêro entre os funcionários:</CardTitle>
                   </CardHeader>
@@ -132,7 +132,7 @@ export default function MainDashboard() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="shadow-black shadow-md rounded-xl">
+                <Card className="shadow-black shadow-md h-[200px] rounded-xl">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-semibold">
                       Total de vendas:
@@ -158,7 +158,7 @@ export default function MainDashboard() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="shadow-black shadow-md rounded-xl">
+                <Card className="shadow-black shadow-md ml-2 w-[260px] rounded-xl">
                   <CardHeader>
                     <CardTitle>Distribuição de métodos de pagamento:</CardTitle>
                   </CardHeader>
