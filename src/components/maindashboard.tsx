@@ -15,12 +15,14 @@ import {
 import AverageAgeCalc from "@/components/dataComponents/averageAge"
 import AverageSalaryCalc from "@/components/dataComponents/averageSalary"
 import GenderDistTrue from "@/components/dataComponents/genderDistTrue"
+import PaymentDistTrue from "@/components/dataComponents/paymentDistTrue"
 import TotalSales from "@/components/dataComponents/totalSales"
+import RecentSales from "@/components/dataComponents/recentSales"
 
 export default function MainDashboard() {
   return (
     <>
-      <div className="hidden flex-col md:flex shadow-black shadow-md">
+      <div className="hidden flex-col md:flex h-[550px] shadow-black shadow-md">
         <div className="border-b">
           <div className="flex  items-center px-4">
             <div className="ml-auto flex items-center space-x-4">
@@ -39,8 +41,8 @@ export default function MainDashboard() {
               <TabsTrigger value="2" className="font-semibold text-lg m-2 ">Vendas</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card className="shadow-black shadow-md rounded-xl">
+              <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                <Card className="shadow-black h-[200px] shadow-md rounded-xl">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-semibold">
                       Salários:
@@ -66,7 +68,7 @@ export default function MainDashboard() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="shadow-black shadow-md rounded-xl">
+                <Card className="shadow-black h-[200px] shadow-md rounded-xl">
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-semibold">
                       Idade:
@@ -92,7 +94,7 @@ export default function MainDashboard() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card className="shadow-black shadow-md rounded-xl">
+                <Card className="shadow-black h-[400px] shadow-md rounded-xl">
                   <CardHeader>
                     <CardTitle>Distribuição de Genêro entre os funcionários:</CardTitle>
                   </CardHeader>
@@ -125,7 +127,7 @@ export default function MainDashboard() {
                   <CardContent>
                     <div>
                       <p className="text-md font-semibold">
-                        <AverageSalaryCalc />
+                        <RecentSales/>
                       </p>
                     </div>
                   </CardContent>
@@ -158,10 +160,10 @@ export default function MainDashboard() {
                 </Card>
                 <Card className="shadow-black shadow-md rounded-xl">
                   <CardHeader>
-                    <CardTitle>Distribuição de Genêro entre os funcionários:</CardTitle>
+                    <CardTitle>Distribuição de métodos de pagamento:</CardTitle>
                   </CardHeader>
                   <CardContent className="pl-2">
-                    <GenderDistTrue />
+                    <PaymentDistTrue />
                   </CardContent>
                 </Card>
               </div>
