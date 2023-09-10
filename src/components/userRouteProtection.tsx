@@ -1,6 +1,6 @@
 'use client'
+
 import React, { useEffect } from "react";
-import { useAuthContext } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 
 interface UserRouteProtectionProps {
@@ -8,22 +8,21 @@ interface UserRouteProtectionProps {
 }
 
 const UserRouteProtection: React.FC<UserRouteProtectionProps> = ({ children }) => {
-  const { user } = useAuthContext();
   const router = useRouter();
 
   useEffect(() => {
-    console.log('User in route protection:', user);
+    const token = localStorage.getItem('authToken'); // Recupera o token armazenado localmente
 
-    if (user === null) {
+    if (token) {
       console.log('User is authenticated!');
-      // You can perform additional actions or navigation here
+      // Você pode realizar ações adicionais ou navegação aqui
     } else {
       alert('User is not authenticated!');
-      router.push('/'); // Redirect to login page or other appropriate action
+      router.push('/'); // Redireciona para a página de login ou outra ação apropriada
     }
-  }, [user, router]);
+  }, [router]);
 
-  return <>{children}</>
+  return <>{children}</>;
 };
 
 export default UserRouteProtection;
