@@ -4,34 +4,35 @@ import jwt from 'jsonwebtoken';
 const TOKEN_KEY = 'authToken';
 const SECRET_KEY = 'senha1234';
 
+
+// Função para definir o token no armazenamento local
+export const setToken = (token) => {
+  localStorage.setItem(TOKEN_KEY, token);
+  console.log('token setado:', token)
+};
+
+// Função para obter o token do armazenamento local
 export const getToken = () => {
   const token = localStorage.getItem(TOKEN_KEY);
-  console.log('Token obtido:', token);
+  console.log('token pego:', token);
   return token;
 };
 
-export const setToken = (token: string) => {
-  localStorage.setItem(TOKEN_KEY, token);
-  console.log('Token definido:', token);
-};
-
-
+// Função para verificar se o token é válido
 export const isTokenValid = () => {
   const token = getToken();
 
-  console.log('Token obtido:', token);
-
-  if (!token) {
-    console.log('Token não encontrado');
-    return false;
+  if (token) {
+    try {
+      // Verificar o token usando a chave secreta
+      jwt.verify(token, 'senha1234');
+      return true;
+    } catch (error) {
+      // Token inválido ou expirado
+      return false;
+    }
   }
 
-  try {
-    const decoded = jwt.verify(token, 'senha1234', { algorithms: ['HS256'] });
-    console.log('Token válido:', decoded);
-    return true;
-  } catch (error) {
-    console.error('Erro ao verificar o token:', error);
-    return false;
-  }
+  // Token não existe no armazenamento local
+  return false;
 };
