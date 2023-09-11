@@ -29,7 +29,8 @@ export default function LoginForm() {
       if (response.ok) {
         // Login bem-sucedido, você pode redirecionar o usuário ou fazer qualquer ação apropriada aqui.
         const data = await response.json();
-        setToken(data.token); // Defina o token no armazenamento local
+        setToken(data.token);
+        console.log('token definido:', data.token) // Defina o token no armazenamento local
         router.push("/userPage");
       } else {
         const data = await response.json();

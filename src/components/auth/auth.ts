@@ -15,11 +15,6 @@ export const setToken = (token: string) => {
   console.log('Token definido:', token);
 };
 
-export const removeToken = () => {
-  const token = getToken();
-  localStorage.removeItem(TOKEN_KEY);
-  console.log('Token removido:', token);
-};
 
 export const isTokenValid = () => {
   const token = getToken();
@@ -32,8 +27,8 @@ export const isTokenValid = () => {
   }
 
   try {
-    jwt.verify(token, 'senha1234', { algorithms: ['HS256'] }); // Substitua 'your-secret-key' pela chave usada para assinar o token no servidor
-    console.log('Token válido');
+    const decoded = jwt.verify(token, 'senha1234', { algorithms: ['HS256'] });
+    console.log('Token válido:', decoded);
     return true;
   } catch (error) {
     console.error('Erro ao verificar o token:', error);
