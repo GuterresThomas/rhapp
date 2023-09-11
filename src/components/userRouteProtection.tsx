@@ -8,19 +8,19 @@ const UserRouteProtection = ({ children }) => {
 
   useEffect(() => {
     // Verificar se o token é válido ao carregar a rota protegida
-    const validToken = async () => {
-      const token =  getToken()
-      const isValid =  await isTokenValid(token);
-      console.log('token válido:', token)
+    const checkTokenValidity = async () => {
+      const token = getToken();
+      console.log('token obtido:', token);
 
-      if (!isValid) {
-        // Se o token não for válido, redirecione para a página de login
+      if (token === null ) {
+        // Se o token não existir ou não for válido, redirecione para a página de login
         router.push("/");
-        alert('aaa');
+        alert('Token inválido ou expirado. Faça login novamente.');
       }
+    };
 
-      checkTokenValidity();
-    }
+    // Chamando a função para verificar a validade do token
+    checkTokenValidity();
   }, [router]);
 
   return <>{children}</>;

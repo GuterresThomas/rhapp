@@ -11,6 +11,10 @@ export const setToken = (token) => {
   console.log('token setado:', token)
 };
 
+export const removeToken = () => {
+  localStorage.removeItem(TOKEN_KEY); // Substitua pelo seu método de armazenamento preferido
+};
+
 // Função para obter o token do armazenamento local
 export const getToken = () => {
   const token = localStorage.getItem(TOKEN_KEY);

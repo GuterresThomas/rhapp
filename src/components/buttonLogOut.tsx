@@ -1,18 +1,21 @@
 
 import React from "react";
-import { getAuth, signOut } from "firebase/auth";
+import { getToken, removeToken, setToken } from '@/components/auth/auth';
+import { useRouter } from 'next/navigation';
 
 const ButtonLogOut = () => {
-    const handleButtonClick = () => {
-        const auth = getAuth();
-        signOut(auth).then(() => {
-            window.location.replace('/');
-        }).catch((error) => {
-            console.log(error)
-        });
-    }
-    return (
-        <button  onClick={handleButtonClick}>Sair</button>
+    const router = useRouter();
+    const handleLogout = () => {
+      const token = getToken()
+      // Remova o token ao fazer o logout
+      removeToken();
+      console.log('token removido:', token)
+      // Redirecione para a página de login ou qualquer outra página apropriada
+      router.push("/");
+      
+    };
+        return (
+        <button  onClick={handleLogout}>Sair</button>
     )
 }
 
