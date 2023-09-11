@@ -3,19 +3,12 @@ import React, { useEffect } from "react";
 import Link from "next/link"
 import Sidebar from "@/components/sideBar"
 import UserRouteProtection from "@/components/userRouteProtection"
-import AdminRouteProtection from "@/components/adminRouteProtection"
-import { useAuthContext } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import jwt from 'jsonwebtoken';
 
 
 export default function Page() {
-  const  user  = useAuthContext();
-  const router = useRouter();
-
-  useEffect(() => {
-  }, [user]);
-
-
+  
   return (
       <UserRouteProtection>
         <div>

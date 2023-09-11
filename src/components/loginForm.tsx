@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link"
+import { isTokenValid, setToken } from '@/components/auth/auth'
+import jwt from 'jsonwebtoken';
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -26,6 +28,8 @@ export default function LoginForm() {
 
       if (response.ok) {
         // Login bem-sucedido, você pode redirecionar o usuário ou fazer qualquer ação apropriada aqui.
+        const data = await response.json();
+        setToken(data.token); // Defina o token no armazenamento local
         router.push("/userPage");
       } else {
         const data = await response.json();
