@@ -1,15 +1,19 @@
 import EmployeeList from "@/components/employee/employeeList"
 import Sidebar from "@/components/sideBar"
+import UserRouteProtection from "@/components/userRouteProtection"
+
 
 export default function EmployeeListPage() {
     return (
-        <div className="flex gap-10">
-            <div>
-                <Sidebar />
+        <UserRouteProtection>
+            <div className="flex gap-10">
+                <div>
+                    <Sidebar />
+                </div>
+                <div className="justify-center flex">
+                    <EmployeeList />
+                </div>
             </div>
-            <div className="justify-center flex">
-                <EmployeeList />
-            </div>
-        </div>
+        </UserRouteProtection>
     )
 }
