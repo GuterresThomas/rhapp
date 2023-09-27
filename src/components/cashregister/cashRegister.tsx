@@ -146,7 +146,7 @@ export default function CashRegister() {
       };
     
       return (
-        <div className="bg-sky-100 rounded-xl shadow-black shadow-md w-[780px] p-4 m-2">
+        <div className="bg-sky-100 rounded-xl shadow-black shadow-md w-[920px] p-4 m-2">
           <ScrollArea className="h-[480px]">      
             <div className="font-bold text-center text-xl">
                 <h2>Caixa</h2>
@@ -213,7 +213,7 @@ export default function CashRegister() {
             </div>
             <div>
                 <h3 className="font-semibold">Total: R${totalAmount.toFixed(2)}</h3>
-                <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Compra</button>
+                <button className=" bg-sky-200 p-2 w-full m-2 rounded-xl lowercase hover:bg-sky-100 font-semibold" onClick={handleCheckout}>Finalizar Venda</button>
             </div>
         </ScrollArea>
         </div>
